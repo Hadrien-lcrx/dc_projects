@@ -2,7 +2,7 @@
 This is a scraper to extract DataCamp courses titles, URLs, technologies and instructors.
 
 ## Module files
-There are two source files:
+There are two main files:
 * `dc_scraper.py` — the course scraper
 * `dc_writer.py` — the csv writer
 
