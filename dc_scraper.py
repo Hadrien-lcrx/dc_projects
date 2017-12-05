@@ -8,11 +8,14 @@ def scraper(page):
     instructors. This dictionary can then be use to create a DataFrame, and
     exported to a csv.
     """
+
+    # Initialize empty lists
     titles = []
     urls = []
     techs = []
     instructors = []
 
+    # Start scraper and get course blocks
     soup = BeautifulSoup(page, 'html')
     div = soup.findAll("div", { "class": "course-block"})
 
@@ -48,8 +51,10 @@ def scraper(page):
         techs.append(tech)
         instructors.append(instructor)
 
+    # Write ordered dictionary and return it
     courses = OrderedDict({'Course': titles,
                            'URL': urls,
                            'Tech': techs,
                            'Instructor': instructors})
+
     return courses
